@@ -840,17 +840,18 @@ while Frame_selected < 35:
                 #input_3d_fft_Az[1,aux] = rd1_complex[list_of_targets[aux][0],list_of_targets[aux][1]] # Channel 1
                 pdb.set_trace()
                 v = ((-fft_dopplersamples/2) + (list_of_targets[aux][1]-1))*vel_resolution                
-                phi = -(4*(np.pi)*v*Tchirp)/(lambda_mmwave)
+                phi = -(4*(np.pi)*v*Tchirp)/(lambda_mmwave) 
+            
                 
                 input_3d_fft_Az[0,aux] = rd2_complex1[list_of_targets[aux][0],list_of_targets[aux][1]] # Channel 2 - Coordinates range,doppler
                 input_3d_fft_Az[1,aux] = rd1_complex1[list_of_targets[aux][0],list_of_targets[aux][1]] # Channel 1  
                 pdb.set_trace();
                 
             
-                phase_correcton = complex(cos(phi),sin(phi)) #this has to be multiplied to the data received from the second transmitter
+                phase_correction = complex(cos(phi),sin(phi)) #this has to be multiplied to the data received from the second transmitter
                 
-                input_3d_fft_Az[2,aux] = (rd2_complex2[list_of_targets[aux][0],list_of_targets[aux][1]])*phase_correcton # Channel 2 - Coordinates range,doppler
-                input_3d_fft_Az[3,aux] = rd1_complex2[list_of_targets[aux][0],list_of_targets[aux][1]]*phase_correcton # Channel 1
+                input_3d_fft_Az[2,aux] = (rd2_complex2[list_of_targets[aux][0],list_of_targets[aux][1]])*phase_correction # Channel 2 - Coordinates range,doppler
+                input_3d_fft_Az[3,aux] = rd1_complex2[list_of_targets[aux][0],list_of_targets[aux][1]]*phase_correction # Channel 1
 	       
                 
                 
