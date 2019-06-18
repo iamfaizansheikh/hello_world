@@ -849,7 +849,7 @@ while Frame_selected < 35:
                 pdb.set_trace();
                 
             
-                phase_correcton = complex(cos(phi),sin(phi))
+                phase_correcton = complex(cos(phi),sin(phi)) #this has to be multiplied to the data received from the second transmitter
                 
                 input_3d_fft_Az[2,aux] = (rd2_complex2[list_of_targets[aux][0],list_of_targets[aux][1]])*phase_correcton # Channel 2 - Coordinates range,doppler
                 input_3d_fft_Az[3,aux] = rd1_complex2[list_of_targets[aux][0],list_of_targets[aux][1]]*phase_correcton # Channel 1
