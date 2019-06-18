@@ -841,7 +841,9 @@ while Frame_selected < 35:
                 pdb.set_trace()
                 v = ((-fft_dopplersamples/2) + (list_of_targets[aux][1]-1))*vel_resolution                
                 phi = -(4*(np.pi)*v*Tchirp)/(lambda_mmwave)
-                
+                 #this phase has to be subtracted for compensation
+                 
+                 
                 input_3d_fft_Az[0,aux] = rd2_complex1[list_of_targets[aux][0],list_of_targets[aux][1]] # Channel 2 - Coordinates range,doppler
                 input_3d_fft_Az[1,aux] = rd1_complex1[list_of_targets[aux][0],list_of_targets[aux][1]] # Channel 1  
                 pdb.set_trace();
